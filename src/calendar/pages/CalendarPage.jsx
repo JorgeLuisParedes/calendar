@@ -2,7 +2,7 @@ import { Calendar } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 import { addHours } from 'date-fns';
-import { Navbar } from '../';
+import { CalendarEvent, Navbar } from '../';
 
 import { localizer, getMessagesES } from '../../helpers';
 
@@ -22,7 +22,7 @@ const events = [
 
 export const CalendarPage = () => {
 	const eventStyleGetter = (event, start, end, isSelected) => {
-		console.log({ event, start, end, isSelected });
+		// console.log({ event, start, end, isSelected });
 
 		const style = {
 			backgroundColor: '#347CF7',
@@ -46,6 +46,9 @@ export const CalendarPage = () => {
 				style={{ height: 'calc(100vh - 80px)' }}
 				messages={getMessagesES()}
 				eventPropGetter={eventStyleGetter}
+				components={{
+					event: CalendarEvent,
+				}}
 			/>
 		</>
 	);
