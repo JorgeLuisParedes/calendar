@@ -32,7 +32,7 @@ export const useCalendarStore = () => {
 			const { data } = await calendarApi.post('/events', calendarEvent);
 			dispatch(onAddNewEvent({ ...calendarEvent, id: data.evento.id, user }));
 		} catch (error) {
-			console.log(error);
+			console.log({ error });
 			Swal.fire('Error al guardar', error.response.data?.msg, 'error');
 		}
 	};
