@@ -68,7 +68,7 @@ export const CalendarModal = () => {
 		setFormSubmitted(true);
 		const difference = differenceInSeconds(formValues.end, formValues.start);
 		if (isNaN(difference) || difference <= 0) {
-			Swal.fire('fechas incorrectas', 'Revisar las fechaas ingresadas', 'error');
+			Swal.fire('fechas incorrectas', 'Revisar las fechas ingresadas', 'error');
 			return;
 		}
 
