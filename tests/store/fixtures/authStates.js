@@ -1,20 +1,20 @@
 export const initialState = {
+	errorMessage: undefined,
 	status: 'checking', // 'authenticated', 'not-authenticated',
 	user: {},
-	errorMessage: undefined,
 };
 
 export const authenticatedState = {
+	errorMessage: undefined,
 	status: 'authenticated', // 'authenticated', 'not-authenticated',
 	user: {
-        uid: '123',
-        name: 'John Doe'
-    },
-	errorMessage: undefined,
+		name: 'John Doe',
+		uid: '123',
+	},
 };
 
 export const notAuthenticatedState = {
+	errorMessage: undefined,
 	status: 'not-authenticated', // 'authenticated', 'not-authenticated',
 	user: {},
-	errorMessage: undefined,
 };
