@@ -7,6 +7,7 @@ import es from 'date-fns/locale/es';
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import { useCalendarStore, useUiStore } from '../../hooks';
+import { getEnvironments } from '../../helpers';
 registerLocale('es', es);
 
 const customStyles = {
@@ -20,7 +21,9 @@ const customStyles = {
 	},
 };
 
-Modal.setAppElement('#root');
+if (getEnvironments().VITE_MODE !== 'test') {
+	Modal.setAppElement('#root');
+}
 export const CalendarModal = () => {
 	const { isDateModalOpen, closeDateModal } = useUiStore();
 	const { activeEvent, startSavingEvent } = useCalendarStore();
